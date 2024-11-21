@@ -1,18 +1,16 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main()
-{
-	// khai bao bien 
-	int firstNumber;
-	int total = 0;
-	// nhap gia tri cho firstNumber tu ban phim 
-	printf("Moi ban nhap so co bon chu so:");
-	scanf("%d",&firstNumber);
-	{
-	total+=firstNumber%10;
-		firstNumber/=10;	
-    }
-	printf("Tong cac chu so tu so ban vua nhap la:%d",total);
-	 return 0; 
- }
-
+int main(){
+	int number;
+	int total_digit=0;
+	do{
+		printf("Nhap vao so nguyen co 4 chu so :");
+		scanf("%d",&number);
+		if(number<1000||number>9999) printf("So khong hop le !\n");
+	}while(number<1000||number>9999);
+	while(number>0){
+		total_digit+=number%10;
+		number/=10;	
+	}
+	printf("Tong cac chu so la :%d",total_digit);
+}
